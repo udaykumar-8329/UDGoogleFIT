@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/top_container">
+    <android.support.design.widget.CoordinatorLayout
+        android:id="@+id/coordinatorLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity"
+        android:background="@color/lightGray">
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        </android.support.v4.view.ViewPager>
+
+        <include
+            android:id="@+id/appBarLayout"
+            layout="@layout/toolbar"/>
+
+
+
+    </android.support.design.widget.CoordinatorLayout>
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        app:layout_anchor="@id/top_container"
+        app:layout_anchorGravity="bottom|right|end"
+        android:src="@drawable/ic_add_white"
+        android:layout_margin="@dimen/fab_margin"
+        android:elevation="5dp"
+        android:visibility="gone"
+        android:clickable="true"/>
+    <View
+        android:id="@+id/main_overlay"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/semiGray"
+        android:paddingBottom="60dp">
+
+    </View>
+
+    <com.getbase.floatingactionbutton.FloatingActionsMenu
+        android:id="@+id/floatingActionMenu"
+        style="@style/FabAppearance.Menu">
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/step_button"
+            style="@style/FabAppearance.Walking" />
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/run_button"
+            style="@style/FabAppearance.Running"/>
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/bike_button"
+            style="@style/FabAppearance.Biking"/>
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/other_button"
+            style="@style/FabAppearance.Other" />
+
+    </com.getbase.floatingactionbutton.FloatingActionsMenu>
+</FrameLayout>
